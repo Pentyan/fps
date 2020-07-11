@@ -14,6 +14,7 @@ public class HPScript : MonoBehaviour
 
         [SerializeField]
     public float HP = 10f;
+    public bool hit;
     public Image image;
     // Start is called before the first frame update
     void Start()
@@ -51,7 +52,7 @@ public class HPScript : MonoBehaviour
             image = Color.Lerp(image.color, Color.clear, 10f * Time.deltaTime);
         }
 
-        if (col.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "enemy")
         {
             hit = true;
             // text.enabled = true;
