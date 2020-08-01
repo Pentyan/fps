@@ -12,7 +12,7 @@ public class HPScript : MonoBehaviour
     public Color flashColor = new Color(1f, 0, 0, 0.1f);
     bool damage;
 
-        [SerializeField]
+        //[SerializeField]
     public float HP = 10f;
     public bool hit;
     public Image image;
@@ -27,12 +27,13 @@ public class HPScript : MonoBehaviour
     {
         if (damage == true)
         {
-            Image.color = flashColor;
+            //Image.color = flashColor;
 
         }
 
         else
-        { Image.color = Color.Lerp(image.color, Color.clear, flashspeed * Time.deltaTime);
+        {
+            //Image.color = Color.Lerp(image.color, Color.clear, flashspeed * Time.deltaTime);
         } 
 
          setSlider.value = HP;
@@ -49,7 +50,7 @@ public class HPScript : MonoBehaviour
         if(other.gameObject.tag == "enemy")
         {
             HP--;
-            image = Color.Lerp(image.color, Color.clear, 10f * Time.deltaTime);
+            //image = Color.Lerp(image.color, Color.clear, 10f * Time.deltaTime);
         }
 
         if (other.gameObject.tag == "enemy")
